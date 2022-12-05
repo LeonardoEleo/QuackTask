@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-task.component.scss']
 })
 export class NewTaskComponent {
-
+btnText = "Criar!"
 }
