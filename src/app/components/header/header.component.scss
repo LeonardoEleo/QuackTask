@@ -1,0 +1,44 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 4px solid #777;
+    
+}
+
+.brand,
+.links {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links li {
+    margin-right: 1em;
+    list-style: none;
+}
+
+#navItem a:hover {
+    border-radius: 20px;
+    background-color: #353535;
+}
+
+.links a {
+    padding: .3em .3em;
+}
+
+.brand-img {
+    width: 40px;
+    margin-right: 0.6em;
+}
+
+.brand-h2 {
+    transition: .1s;
+}
+
+.brand:hover > h2 {
+    color: #dec129;
+}
