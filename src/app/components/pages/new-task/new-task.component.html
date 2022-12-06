@@ -1,2 +1,2 @@
 <h2>Nova Tarefa</h2>
-<app-task-form [btnText]="btnText"></app-task-form>
+<app-task-form [btnText]="btnText" (onSubmit)="createHandler($event)"></app-task-form>

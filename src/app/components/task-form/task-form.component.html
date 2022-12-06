@@ -1,11 +1,17 @@
-<form>
+<form (ngSubmit)="submit()" [formGroup]="taskForm" #formDir="ngForm">
     <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" placeholder="Nome da tarefa" required />
+        <input type="text" placeholder="Nome da tarefa" formControlName="nome" required/>
+        <div *ngIf="nome.invalid &&formDir.submitted" class="validation-error">
+            <p *ngIf="nome.errors?.['required']">O Nome é obrigatório</p>
+        </div>
     </div>
     <div class="form-group">
         <label for="name">Descrição:</label>
-        <textarea placeholder="Detalhes sobre a tarefa" maxlength="140"></textarea>
+        <textarea placeholder="Detalhes sobre a tarefa" maxlength="140" formControlName="descricao"></textarea>
+        <div *ngIf="descricao.invalid &&formDir.submitted" class="validation-error">
+            <p *ngIf="descricao.errors?.['required']">A Descrição é obrigatória</p>
+        </div>
     </div>
     <input type="submit" value="{{ btnText }}">
 </form>
