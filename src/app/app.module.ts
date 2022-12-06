@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewTaskComponent } from './components/pages/new-task/new-task.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { TaskFormComponent } from './components/task-form/task-form.component';
     FooterComponent,
     HomeComponent,
     NewTaskComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

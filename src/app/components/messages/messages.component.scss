@@ -1,0 +1,38 @@
+.message {
+    position: fixed;
+    top: 3em;
+    width: 50%;
+    margin-left: 50%;
+    left: -25%;
+    z-index: 10;
+    background-color: #fff;
+    border: 3px solid #dec129;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.message-header {
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.message-header button {
+    border-radius: 10px;
+    border: 1px, solid #dec129;
+    color: #dec129;
+    background-color: #353535;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.message p {
+    font-size: 1.2em;
+}
+
+.message-img {
+    width: 7%;
+}
