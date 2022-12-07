@@ -2,6 +2,8 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { Task } from 'src/app/Task';
 import { TaskService } from 'src/app/services/task.service';
+import { MessageService } from 'src/app/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-task',
@@ -11,7 +13,10 @@ import { TaskService } from 'src/app/services/task.service';
 export class NewTaskComponent {
 btnText = "Criar!"
 
-constructor(private taskService: TaskService) {}
+constructor(
+  private taskService: TaskService, 
+  private messageService: MessageService,
+  private router: Router) {}
 
 async createHandler(Task: Task) {
  const formData = new FormData()
@@ -22,8 +27,8 @@ async createHandler(Task: Task) {
 
  await this.taskService.createTask(formData).subscribe();
 
- //exibir msg
+ this.messageService.add("Tarefa adicionada!")
 
- //redirect
+ this.router.navigate(['/'])
   }
 }

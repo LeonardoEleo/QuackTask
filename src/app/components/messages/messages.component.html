@@ -1,8 +1,8 @@
-<div class="message">
+<div class="message" *ngIf="messageService.message">
     <div class="message-header">
         <img src="/assets/images/duckWalk.gif" class="message-img">
         <h2>Mensagem do Sistema</h2>
-        <button class="clear"><fa-icon [icon]="faTimes"></fa-icon></button>
+        <button class="clear" (click)="messageService.clear()"><fa-icon [icon]="faTimes"></fa-icon></button>
     </div>
-    <p>Mensagem do sistema</p>
+    <p>{{ messageService.message }}</p>
 </div>
