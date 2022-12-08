@@ -1,7 +1,29 @@
 <div class="home-container">
     <h1>Minhas Tarefas</h1>
-    <div *ngFor="let task of allTasks">
-        <h2>{{task.nome}}</h2>
+    <div *ngIf="tasks.length > 0; else noTasks">
+        <div class="task-container">
+            <div *ngFor="let task of allTasks">
+                
+                    <div class="task">
+                        <div class="task-item task-name"><a routerLink="task/{{task.id}}"><h2>{{task.nome}}</h2></a></div>
+                     
+                        <div class="task-item task-creation-date"><p>Criada em: {{ task.created_at }}</p></div>
+                        <div class="task-item task-conclusion-date"><p *ngIf="task.status == 1">CONCLUÍDA DIA: {{ task.data_conclusao }}</p></div>
+                        <div class="task-item task-check-button" *ngIf="task.status == 0; else uncheck"><button (click)="checkTask(task)">Check</button></div>
+                        <ng-template #uncheck><div class="task-item task-check-button"><button (click)="checkTask(task)">Uncheck</button></div></ng-template>
+                    </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>                                                              
+    <ng-template #noTasks>
+        <h1>Nenhuma tarefa por aqui...</h1>
+        <p>Adicione alguma tarefa <a routerLink="/task/new">aqui!</a></p>
+    </ng-template>
 
-    </div>
 </div>
+
+
+                    

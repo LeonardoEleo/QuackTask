@@ -24,4 +24,18 @@ createTask(formData: FormData): Observable<FormData> {
   return this.http.post<FormData>(this.apiUrl, formData);
 }
 
+check(id: number) {
+  return this.http.patch<Task>(`${this.apiUrl}/${id}`, { "status": 1, "data_conclusao": new Date().toISOString().slice(0, 19).replace('T', ' ')})
+}
+
+uncheck(id: number) {
+  console.log( "unchecking")
+  return this.http.patch<Task>(`${this.apiUrl}/${id}`, { "status": 0})
+}
+
+getTask(id: number): Observable<Response<Task>> {
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.get<Response<Task>>(this.apiUrl);
+}
+
 }

@@ -15,6 +15,7 @@ import { NewTaskComponent } from './components/pages/new-task/new-task.component
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TaskComponent } from './components/pages/task/task.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     NewTaskComponent,
     TaskFormComponent,
-    MessagesComponent
+    MessagesComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
