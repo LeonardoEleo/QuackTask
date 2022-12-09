@@ -1,1 +1,18 @@
-<p>task works!</p>
+<div class="task" *ngIf="task">
+    <div class="name"> <h1>{{task.nome}}</h1></div>
+    <div class="task-item task-conclusion-date"><p *ngIf="task.status == 1">CONCLUÍDA DIA: {{ task.data_conclusao }}</p></div>
+   
+    <div class="description">
+        <h3>Sobre esta tarefa:</h3>
+        <p>{{task.descricao}}</p>
+    </div>
+    <div class="actions">
+        <h3>Ações:</h3>
+        <a routerLink="/task/edit/{{ task.id }}" class="edit-btn">
+            <fa-icon [icon]="faEdit"></fa-icon> Editar
+        </a>
+        <button class="delete-btn" (click)="removeHandler(task.id!)">
+            <fa-icon [icon]="faTimes"></fa-icon>Excluir
+        </button>
+    </div>
+</div>

@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     }
     else {
        this.taskService.uncheck(task.id!).subscribe((data) => {
-      console.log(data);
+
       this.ngOnInit();
     });
     

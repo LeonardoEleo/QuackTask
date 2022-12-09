@@ -1,0 +1,51 @@
+.task {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+.description{
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    padding: 1.2em;
+}
+
+.actions {
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-color: #eee;
+    padding: 0.8em;
+    width: 100%;
+}
+
+.description h3 {
+    font-size: 26px;
+}
+.description p {
+    font-size: 20px;
+}
+
+.name {
+    white-space: nowrap;
+    max-width: 90%;
+    overflow: hidden;
+    display: block;
+    text-overflow: clip ellipsis;
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.task-conclusion-date {
+    font-size: 25px;
+    color: #0b2b0a;
+    margin-top: .4em;
+    border-left: 3px solid #123d12;
+    padding-left: .2em;
+    background-color: #a7ffba72;
+}

@@ -11,16 +11,16 @@ import { Task } from 'src/app/Task';
 export class TaskFormComponent {
   @Output() onSubmit = new EventEmitter<Task>()
   @Input() btnText!: string
+  @Input() taskData: Task | null = null
 
   taskForm!: FormGroup;
 
+
   ngOnInit(): void {
-    this.taskForm =new FormGroup({
-      id: new FormControl(''),
-      nome: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
-      dataConclusao: new FormControl(''),
-      status: new FormControl('')
+    this.taskForm = new FormGroup({
+      id: new FormControl(this.taskData ? this.taskData.id : ''),
+      nome: new FormControl(this.taskData ? this.taskData.nome : '', [Validators.required]),
+      descricao: new FormControl(this.taskData ? this.taskData.descricao : '', [Validators.required])
     });
   }
 
@@ -36,7 +36,7 @@ export class TaskFormComponent {
     if (this.taskForm.invalid) {
       return;
     }
-    console.log("enviou form")
+    
     this.onSubmit.emit(this.taskForm.value)
   }
 

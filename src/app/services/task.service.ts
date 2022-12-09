@@ -20,6 +20,11 @@ getTasks(): Observable<Response<Task[]>> {
   return this.http.get<Response<Task[]>>(this.apiUrl);
 }
 
+getTask(id: number): Observable<Response<Task>> {
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.get<Response<Task>>(url);
+}
+
 createTask(formData: FormData): Observable<FormData> {
   return this.http.post<FormData>(this.apiUrl, formData);
 }
@@ -29,13 +34,19 @@ check(id: number) {
 }
 
 uncheck(id: number) {
-  console.log( "unchecking")
+ 
   return this.http.patch<Task>(`${this.apiUrl}/${id}`, { "status": 0})
 }
 
-getTask(id: number): Observable<Response<Task>> {
+removeTask(id: number) {
   const url = `${this.apiUrl}/${id}`;
-  return this.http.get<Response<Task>>(this.apiUrl);
+  return this.http.delete(url);
 }
 
+ updateTask(id: number, taskData: Task): Observable<Task> {
+
+  const url = `${this.apiUrl}/${id}`;
+  return this.http.put<Task>(url, {"nome": taskData.nome, "descricao": taskData.descricao });
+
+}
 }

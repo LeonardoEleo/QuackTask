@@ -1,0 +1,4 @@
+<div *ngIf="task"> 
+    <h2>Editando a tarefa!</h2>
+    <app-task-form (onSubmit)="editHandler($event)" [taskData]="task" [btnText]="btnText"></app-task-form>
+</div>

@@ -2,7 +2,7 @@
     <h1>Minhas Tarefas</h1>
     <div *ngIf="tasks.length > 0; else noTasks">
         <div class="task-container">
-            <div *ngFor="let task of allTasks">
+            <div *ngFor="let task of allTasks.reverse()">
                 
                     <div class="task">
                         <div class="task-item task-name"><a routerLink="task/{{task.id}}"><h2>{{task.nome}}</h2></a></div>
